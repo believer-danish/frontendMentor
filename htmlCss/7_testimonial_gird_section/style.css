@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-moderate-voilet: hsl(263, 55%, 52%);
+  --clr-vdark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-dark-balckish-blue: hsl(219, 29%, 14%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --clr-light-gray: hsl(0, 0%, 81%);
+  --clr-grayish-blue: hsl(210, 46%, 95%);
+
+  --fw-bold: 500;
+  --fw-bolder: 600;
+}
+
+html {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+body {
+  background-color: var(--clr-grayish-blue);
+}
+img {
+  display: block;
+  border-radius: 50%;
+  max-width: 100%;
+}
+.image {
+  aspect-ratio: 1/1;
+  width: 2rem;
+}
+
+.grid-container {
+  /* background-color: red; */
+  margin-top: 12.5rem;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 85.5rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "one one one one  two  five"
+    "three  four four  four four five";
+}
+.item {
+  padding: 2rem;
+  border-radius: 1rem;
+  color: var(--clr-white);
+}
+
+.item1 {
+  background-image: url("images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 90% top;
+  grid-area: one;
+  background-color: var(--clr-moderate-voilet);
+}
+
+.item2 {
+  grid-area: two;
+  background-color: var(--clr-vdark-grayish-blue);
+}
+
+.item3 {
+  grid-area: three;
+  background-color: var(--clr-white);
+  color: var(--clr-vdark-grayish-blue);
+}
+
+.item4 {
+  grid-area: four;
+  background-color: var(--clr-dark-balckish-blue);
+}
+
+.item5 {
+  grid-area: five;
+  background-color: var(--clr-white);
+  color: var(--clr-vdark-grayish-blue);
+}
+
+.item header {
+  display: flex;
+  gap: 1rem;
+  align-items: top;
+  padding-bottom: 1rem;
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+}
+.item header h3:last-child {
+  opacity: 0.5;
+}
+
+.detail p {
+  opacity: 0.7;
+  padding-block: 2rem;
+  line-height: 1.5;
+}
+
+.detail h1 {
+  padding-left: 0.4rem;
+  line-height: 1.2;
+}
+@media (width <= 768px) {
+  .grid-container {
+    background-color: red;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five";
+  }
+}
+
+@media (width > 1450px) {
+  .grid-container {
+    max-width: 100rem;
+  }
+}
