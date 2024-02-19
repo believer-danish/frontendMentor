@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  --fw-normal: 400;
+  --fw-bold: 500;
+  --fw-bolder: 700;
+
+  --grd-magenta: hsl(293, 100%, 63%);
+  --grd-violet: hsl(264, 100%, 61%);
+
+  --clr-pale-violet: hsl(276, 100%, 81%);
+  /* (sub-heading at the top of the app UI) */
+
+  --clr-moderate-violet: hsl(276, 55%, 52%);
+  /* (chat on the left) */
+
+  --clr-dark-violet: hsl(271, 15%, 43%);
+  /* (chat on the right) */
+
+  --clr-grayish-blue: hsl(206, 6%, 79%);
+  /* (placeholder text) */
+  --clr-vdark-violet: hsl(271, 36%, 24%);
+  /* (main heading) */
+  --clr-dark-grayish-violet: hsl(270, 7%, 64%);
+  /* (paragraph) */
+
+  --clr-white: hsl(0, 0%, 100%);
+
+  --clr-light-violet: hsl(270, 20%, 96%);
+  /* app background */
+
+  --clr-vdark-violet: hsl(271, 36%, 24%);
+  /* (submit button background) */
+
+  --clr-vlight-magenta: hsl(289, 100%, 72%);
+  /* (radio button outline) */
+}
+
+.chat-app {
+  width: 100%;
+  position: relative;
+  height: 100dvh;
+  background-color: var(--clr-white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.chat-app::before {
+  position: absolute;
+  content: "";
+  width: 49%;
+  height: 53%;
+  top: 0;
+  left: 0;
+
+  border-radius: 100% 0% 100% 0% / 0% 47% 53% 100%;
+  background-image: linear-gradient(
+    to top,
+    var(--grd-violet),
+    var(--grd-magenta)
+  );
+  z-index: -1;
+}
+.chat-app::after {
+  position: absolute;
+  content: "";
+  width: 49%;
+  height: 53%;
+  bottom: 0;
+  right: 0;
+
+  /* top: 50vh; */
+  border-radius: 100% 0% 100% 0% / 47% 100% 0% 53%;
+  background-color: hsla(270, 7%, 64%, 0.1);
+  z-index: -1;
+}
+.left-section,
+.right-section {
+  flex: 1;
+}
+.left-section {
+  /* background-color: pink; */
+  display: flex;
+  justify-content: center;
+}
+.right-section {
+  /* background-color: yellow; */
+}
+.smartphone {
+  background-color: var(--clr-white);
+  width: 90vw;
+  max-width: 15.5rem;
+  height: 31.5rem;
+  margin-top: 4rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  padding: 1em;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: var(--clr-light-violet);
+}
+
+.phone-header {
+  width: 100%;
+  height: 15%;
+
+  background: linear-gradient(to right, var(--grd-violet), var(--grd-magenta));
+}
+
+.chat-section {
+  background-color: var(--clr-light-violet);
+  margin: 0 auto;
+  width: 90%;
+  height: 75%;
+}
+.smartphone footer {
+  width: 90%;
+  margin: 0 auto;
+  height: 8%;
+  /* background-color: red; */
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+footer label {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+footer input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 1em;
+}
+
+footer label::before {
+  position: absolute;
+  content: "";
+  background-color: var(--clr-vdark-violet);
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  left: 100%;
+  transform: translate(-100%);
+}
+
+footer label::after {
+  position: absolute;
+  content: "";
+  /* background-color: red; */
+  top: 25%;
+  bottom: 25%;
+  left: 85%;
+  right: 5%;
+  width: 1rem;
+  height: 1rem;
+  border-left: 5px solid white;
+  border-top: 5px solid white;
+  transform: rotate(130deg);
+}
+ul {
+  padding-right: 0.5rem;
+  line-height: 0.4;
+  font-size: 0.5rem;
+  color: white;
+}
+h1 {
+  font-size: 0.8rem;
+  color: var(--clr-white);
+}
+h2 {
+  font-size: 0.5rem;
+  font-weight: var(--fw-normal);
+  color: var(--clr-light-violet);
+}
+
+.phone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.phone-header::before {
+  position: absolute;
+  content: "";
+  height: 2rem;
+  width: 60%;
+  top: -1rem;
+  left: 50%;
+  border-radius: 3rem;
+  transform: translate(-50%);
+  background-color: var(--clr-white);
+}
+.phone-header .avatar img {
+  display: block;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.arrow {
+  margin-left: 0.5rem;
+
+  width: 0.6rem;
+  aspect-ratio: 1/1;
+  /* background-color: red; */
+  border-left: 0.2rem solid white;
+  border-top: 0.2rem solid white;
+  transform: rotate(-40deg);
+}
+
+.chat-section img {
+  display: block;
+  width: 20%;
+  aspect-ratio: 1/1;
+  border-radius: 0.7rem;
+}
+.chat-section p {
+  padding: 0.5rem;
+  /* background-color: var(--clr-dark-grayish-violet); */
+  color: var(--clr-dark-grayish-violet);
+  background-color: white;
+  border-radius: 0.5rem;
+  max-width: 60%;
+}
+
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.5rem;
+  overflow: hidden;
+  padding: 0.5rem;
+  /* background-color: blue; */
+
+  margin: 0;
+}
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.dog-picture {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}
+.chat2 {
+  align-items: end;
+}
+
+.chat3 p.price {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    to right,
+    var(--grd-magenta),
+    var(--grd-violet)
+  );
+}
+span.radio {
+  background-color: var(--clr-light-magenta);
+  width: 10%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+p.price span {
+  font-weight: var(--fw-bolder);
+}
+.text-content {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.text-content h1 {
+  font-size: 2.5rem;
+  color: var(--clr-vdark-violet);
+}
+.text-content p {
+  color: var(--clr-dark-grayish-violet);
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+.chat1 p,.chat3 p {
+  color: var(--clr-moderate-violet);
+} 
+.chat1 p{
+  color:var(--clr-dark-violet);
+}
+@media (width >=1050px) {
+  .chat-app {
+    flex-direction: row;
+  }
+  .chat-app::before {
+    width: 36%;
+    height: 88%;
+    left: -7%;
+    border-radius: 0 0 44% 50%;
+  }
+  .chat-app::after {
+    width: 23%;
+    height: 85%;
+  }
+  .smartphone {
+    margin-top: 0;
+    margin-left: 16rem;
+  }
+  .text-content {
+    text-align: start;
+  }
+}
+
+@media (width > 1440px) {
+  :root {
+    font-size: 20px;
+  }
+}
