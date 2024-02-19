@@ -305,18 +305,21 @@ p.price span {
 }
 .text-content h1 {
   font-size: 2.5rem;
+  padding-block: 1.2rem;
   color: var(--clr-vdark-violet);
 }
 .text-content p {
   color: var(--clr-dark-grayish-violet);
   line-height: 1.7;
   font-size: 1.1rem;
+  width: 70%;
 }
-.chat1 p,.chat3 p {
+.chat1 p,
+.chat3 p {
   color: var(--clr-moderate-violet);
-} 
-.chat1 p{
-  color:var(--clr-dark-violet);
+}
+.chat1 p {
+  color: var(--clr-dark-violet);
 }
 @media (width >=1050px) {
   .chat-app {
